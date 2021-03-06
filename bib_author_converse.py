@@ -12,6 +12,10 @@ for i in range(len(mylist_1)):
     mylist_tmp.append(i)
     if mylist_1[i] == "and":
         mylist_tmp.pop()
+        if not mylist_2:
+            mylist_1[i - 1] += ","
+            mylist_2.append(mylist_tmp.copy())
+            mylist_tmp.clear()
     elif mylist_1[i][-1:] == ",":
         mylist_2.append(mylist_tmp.copy())
         mylist_tmp.clear()
